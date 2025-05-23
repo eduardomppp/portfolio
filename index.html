@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Portfólio | Eduardo Prado</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+  /* Cores & variáveis */
+  :root {
+    --color-primary: #115bfc;
+    --color-secondary: #0036cc;
+    --color-bg-dark: #0a0a1a;
+    --color-bg-gradient: linear-gradient(135deg, #002e74, #002e74, #002e74);
+    --color-text-light: #e0eaff;
+    --color-shadow: rgba(0, 255, 255, 0.3);
+  }
+
+  /* Reset */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth;
+  }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--color-bg-dark);
+    color: var(--color-text-light);
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  /* Fundo partículas */
+  #particles-js {
+    position: fixed;
+    width: 100%; height: 100%;
+    top: 0; left: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  header {
+    background: var(--color-bg-gradient);
+    text-align: center;
+    padding: 50px 20px 40px;
+    font-family: 'Orbitron', sans-serif;
+    box-shadow: 0 0 20px var(--color-shadow);
+    position: relative;
+    z-index: 10;
+  }
+  header h1 {
+    font-size: 3rem;
+    color: var(--color-primary);
+    text-shadow: 0 0 10px var(--color-primary);
+  }
+  header p {
+    margin-top: 8px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #b6b6cc;
+  }
+
+  section {
+    max-width: 900px;
+    margin: 40px auto;
+    background: rgba(15, 10, 30, 0.85);
+    border-radius: 15px;
+    padding: 30px 25px;
+    box-shadow: 0 0 20px var(--color-shadow);
+    position: relative;
+    z-index: 10;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  section.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  img.perfil {
+    display: block;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    width: 130px;
+    border: 3px solid var(--color-primary);
+    box-shadow: 0 0 15px var(--color-primary);
+  }
+
+  h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+  }
+
+  p, ul {
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: #d0d4e1;
+  }
+  ul li {
+    margin-bottom: 8px;
+  }
+
+  .tag {
+    background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
+    color: #0a0a1a;
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-weight: 600;
+    margin: 5px 8px 10px 0;
+    display: inline-block;
+    box-shadow: 0 0 8px var(--color-primary);
+    transition: transform 0.3s ease;
+    cursor: default;
+  }
+  .tag:hover {
+    transform: scale(1.1);
+  }
+
+  .skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+  }
+  .skill-item {
+    text-align: center;
+    width: 100px;
+    transition: transform 0.4s ease;
+    cursor: default;
+  }
+  .skill-item i {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    text-shadow: 0 0 8px var(--color-primary);
+    margin-bottom: 6px;
+  }
+  .skill-item:hover {
+    transform: scale(1.15);
+  }
+
+  .projeto {
+    margin-bottom: 30px;
+  }
+  .projeto img {
+    width: 100%;
+    border-radius: 15px;
+    margin-top: 12px;
+    box-shadow: 0 0 15px var(--color-primary);
+    transition: transform 0.3s ease;
+  }
+  .projeto img:hover {
+    transform: scale(1.03);
+  }
+  .projeto h3 {
+    color: var(--color-secondary);
+    margin-bottom: 6px;
+  }
+  .projeto p {
+    color: #b0b4d1;
+  }
+
+  /* Contato */
+  .contact-icons {
+    text-align: center;
+  }
+  .contact-icons a {
+    color: var(--color-primary);
+    text-decoration: none;
+    margin: 12px 20px;
+    font-weight: 600;
+    padding: 12px 28px;
+    border: 2px solid var(--color-primary);
+    border-radius: 35px;
+    box-shadow: 0 0 12px var(--color-primary);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1.1rem;
+  }
+  .contact-icons a:hover {
+    background: var(--color-primary);
+    color: var(--color-bg-dark);
+    box-shadow: 0 0 30px var(--color-primary);
+  }
+
+  /* Emoji pequenas */
+  .emoji {
+    margin-right: 8px;
+  }
+
+  /* Responsivo */
+  @media (max-width: 650px) {
+    header h1 {
+      font-size: 2.3rem;
+    }
+    section {
+      margin: 25px 15px;
+      padding: 20px 15px;
+    }
+    .skills {
+      gap: 18px;
+    }
+  }
+
+  .projeto {
+  margin-bottom: 30px;
+}
+.projeto img {
+  width: 100%;
+  border-radius: 15px;
+  margin-top: 12px;
+  box-shadow: 0 0 15px var(--color-primary);
+  transition: transform 0.3s ease;
+}
+.projeto img:hover {
+  transform: scale(1.03);
+}
+.projeto h3 {
+  color: var(--color-secondary);
+  margin-bottom: 6px;
+}
+.projeto p {
+  color: #b0b4d1;
+}
+
+
+  .projeto {
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 10px;
+  }
+
+  .projeto {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 8px var(--color-shadow);
+}
+
+.tag:hover {
+  transform: scale(1.1) rotate(-2deg);
+  box-shadow: 0 0 15px var(--color-secondary);
+}
+
+
+
+</style>
+</head>
+<body>
+
+<div id="particles-js"></div>
+
+<header>
+  <h1>👨‍💻 Eduardo Prado</h1>
+  <p>Eng. de Software e Produção | Dados, Qualidade e Automação | Scrum Master</p>
+</header>
+
+<section>
+  <img src="logo.PNG" alt="Foto de perfil" class="perfil" />
+  <p><strong>📍 Atualmente:</strong> Grupo Adriano Cobuccio</p>
+
+  <h2><span class="emoji">🚀</span> Sobre Mim</h2>
+  <p>Engenheiro com experiência em <strong>Projetos, Melhoria Contínua</strong> e <strong>Automação</strong> nas áreas de PCP, PCM e Operações.</p>
+  <div>
+    <span class="tag">Scrum</span><span class="tag">Kanban</span><span class="tag">Lean</span><span class="tag">PDCA</span>
+  </div>
+
+  <h2><span class="emoji">💻</span> Stack e Tecnologias</h2>
+  <div>
+    <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">Django</span><span class="tag">SQL</span>
+    <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
+  </div>
+
+  <h2><span class="emoji">📊</span> Dados & Qualidade</h2>
+  <div>
+    <span class="tag">Pandas</span><span class="tag">Machine Learning</span><span class="tag">Dashboards</span>
+  </div>
+
+  <h2><span class="emoji">💡</span> Propósito</h2>
+  <p>Transformar dados e processos em valor com <strong>inovação, inteligência e impacto real</strong>.</p>
+</section>
+
+<section>
+  <h2>Habilidades Técnicas</h2>
+  <div class="skills">
+    <div class="skill-item"><i class="fab fa-html5"></i><div>HTML5</div></div>
+    <div class="skill-item"><i class="fab fa-css3-alt"></i><div>CSS3</div></div>
+    <div class="skill-item"><i class="fab fa-js-square"></i><div>JavaScript</div></div>
+    <div class="skill-item"><i class="fab fa-react"></i><div>React</div></div>
+    <div class="skill-item"><i class="fas fa-database"></i><div>SQL</div></div>
+    <div class="skill-item"><i class="fab fa-github"></i><div>GitHub</div></div>
+    <div class="skill-item"><i class="fab fa-python"></i><div>Python</div></div>
+    <div class="skill-item"><i class="fab fa-node-js"></i><div>Node.js</div></div>
+    <div class="skill-item"><i class="fas fa-server"></i><div>Apache2</div></div>
+  </div>
+</section>
+
+<section>
+  <h2>Formação Acadêmica</h2>
+  <ul>
+    <li><strong>Engenharia de Produção</strong> - Centro Universitário Internacional (UNINTER)</li>
+    <li><strong>Bacharelado Engenharia de Software</strong> - Centro Universitário Internacional (UNINTER)</li>
+    <li><strong>Pós-Gestão de Projetos</strong> - ECID</li>
+  </ul>
+</section>
+
+<section>
+  <h2>🛠️ Trabalhos Realizados</h2>
+
+  <div class="projeto">
+    <h3>Gestão de Estoque – Uma Solução Simples para um Desafio Real</h3>
+    <p>🌱 <strong>Um Projeto em Evolução, Baseado na Prática</strong></p>
+<p>
+  Essa aplicação é o reflexo de um processo de aprendizado contínuo — tanto na área industrial quanto na de desenvolvimento de software. 
+  Não é uma solução definitiva, mas sim uma tentativa real de facilitar a rotina de quem, como eu, já sentiu na pele as dificuldades do chão de fábrica.
+</p>
+
+    <img src="1.jpeg" alt="Dashboard Vendas - Tela 1" />
+    <img src="2.jpeg" alt="Dashboard Vendas - Tela 2" />
+    <img src="3.jpeg" alt="Dashboard Vendas - Tela 3" />
+    <img src="4.jpeg" alt="Dashboard Vendas - Tela 4" />
+    <img src="5.jpeg" alt="Dashboard Vendas - Tela 5" />
+    <img src="6.jpeg" alt="Dashboard Vendas - Tela 6" />
+
+  </div>
+
+  <div class="projeto">
+    <h3>🛒 Sistema de Compras 🛒</h3>
+    <p>
+    Este é um sistema de compras que desenvolvi baseado em uma demanda de um cliente em crescimento. 
+    Ele é projetado para ser intuitivo e fácil de usar, com foco na experiência do usuário.
+    </p>
+    <p>
+    Vou continuar aprimorando e aprendendo. Se você tiver algum feedback ou sugestões, adoraria ouvir!
+    </p>
+    <img src="7.jpeg" alt="Dashboard Vendas - Tela 7" />
+  </div>
+
+
+ <div class="projeto">
+    <h3> 🚀 Gestão à Vista 🚀 </h3>
+   
+<p>
+  Este projeto que desenvolvi consiste em um sistema de controle de indicadores para 16 setores da organização. 
+  O site foi criado com o objetivo de otimizar a gestão e o monitoramento dos principais KPIs, oferecendo uma visão clara e prática do desempenho em tempo real.
+</p>
+<p>
+  Acredito que a integração entre engenharia de produção e tecnologia da informação é essencial para impulsionar a eficiência operacional e elevar a qualidade em qualquer empresa.
+</p>
+
+    <img src="8.JPG" alt="Dashboard Vendas - Tela 8" />
+    <img src="9.JPG" alt="Dashboard Vendas - Tela 9" />
+  </div>
+
+
+ <div class="projeto">
+    <h3> 🚀 Projeto de Validação de Prospecção Comercial 🚀 </h3>
+   
+<p>
+  Este projeto tem como objetivo apoiar o trabalho dos representantes comerciais durante visitas a lojistas. 
+  Por meio de um formulário digital, os representantes registram as visitas com captura automática da geolocalização, 
+  garantindo mais transparência e rastreabilidade no processo.
+</p>
+
+<p>
+  <strong>📊 Relatórios Automatizados:</strong> Também foi implementada uma funcionalidade que gera relatórios automaticamente, 
+  calculando os valores a receber com base nas visitas realizadas. Isso reduz o trabalho manual e garante maior precisão nos dados.
+</p>
+
+<p>
+  <strong>✅ Resultados:</strong> O sistema já está em operação, validando as visitas em campo e contribuindo significativamente para 
+  a otimização da gestão da equipe comercial.
+</p>
+
+    <img src="10.jpeg" alt="Dashboard Vendas - Tela 10" />
+    <img src="11.jpeg" alt="Dashboard Vendas - Tela 11" />
+  </div>
+</section>
+
+
+<section>
+  <h2>📞 Contato</h2>
+  <div class="contact-icons">
+    <a href="mailto:eduardo.prado@email.com" target="_blank">
+      <i class="fas fa-envelope"></i> Email
+    </a>
+    <a href="https://www.linkedin.com/in/eduardoprado" target="_blank">
+      <i class="fab fa-linkedin"></i> LinkedIn
+    </a>
+    <a href="https://github.com/eduardoprado" target="_blank">
+      <i class="fab fa-github"></i> GitHub
+    </a>
+    <a href="https://wa.me/5519983062154" target="_blank">
+      <i class="fab fa-whatsapp"></i> WhatsApp
+    </a>
+  </div>
+</section>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const sections = document.querySelectorAll("section");
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) entry.target.classList.add("visible");
+    });
+  }, { threshold: 0.1 });
+
+  sections.forEach(section => observer.observe(section));
+});
+
+</script>
+
+<!-- Script partículas -->
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+  particlesJS('particles-js', {
+    particles: {
+      number: { value: 60, density: { enable: true, value_area: 800 } },
+      color: { value: "#00fff7" },
+      shape: { type: "circle" },
+      opacity: { value: 0.3, random: true },
+      size: { value: 3, random: true },
+      move: { enable: true, speed: 1.5, direction: "none", random: true, out_mode: "out" }
+    },
+    interactivity: {
+      detect_on: "canvas",
+      events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" } },
+      modes: { repulse: { distance: 80, duration: 0.4 }, push: { particles_nb: 4 } }
+    },
+    retina_detect: true
+  });
+</script>
+
+</body>
+</html>
