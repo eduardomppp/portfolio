@@ -3,446 +3,1085 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Portfólio | Eduardo Prado</title>
+<title>Eduardo Prado | Automatize sua Empresa - Faça Mais com Menos</title>
+<meta name="description" content="Automatize processos, otimize operações e faça mais com menos. Soluções em engenharia de software e automação empresarial.">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
 <style>
-  /* Cores & variáveis */
+  /* Cores & variáveis modernas */
   :root {
-    --color-primary: #115bfc;
-    --color-secondary: #0036cc;
-    --color-bg-dark: #0a0a1a;
-    --color-bg-gradient: linear-gradient(135deg, #002e74, #002e74, #002e74);
-    --color-text-light: #e0eaff;
-    --color-shadow: rgba(0, 255, 255, 0.3);
+    --color-primary: #0066FF;
+    --color-secondary: #00D4FF;
+    --color-accent: #7B61FF;
+    --color-dark: #0A0F2B;
+    --color-darker: #050A1A;
+    --color-light: #FFFFFF;
+    --color-gray: #8A94B3;
+    --gradient-primary: linear-gradient(135deg, #0066FF 0%, #00D4FF 100%);
+    --gradient-dark: linear-gradient(135deg, #050A1A 0%, #0A0F2B 100%);
+    --shadow-primary: 0 10px 30px rgba(0, 102, 255, 0.2);
+    --shadow-accent: 0 10px 30px rgba(123, 97, 255, 0.3);
+    --whatsapp-green: #25D366;
   }
 
-  /* Reset */
+  /* Reset e base */
   * {
-    margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth;
+    margin: 0; padding: 0; box-sizing: border-box;
   }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
   body {
     font-family: 'Inter', sans-serif;
-    background: var(--color-bg-dark);
-    color: var(--color-text-light);
+    background: var(--color-darker);
+    color: var(--color-light);
     overflow-x: hidden;
+    line-height: 1.6;
+  }
+
+  /* Container principal */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  /* Header hero */
+  .hero {
+    background: var(--gradient-dark);
     min-height: 100vh;
-    position: relative;
-  }
-
-  /* Fundo partículas */
-  #particles-js {
-    position: fixed;
-    width: 100%; height: 100%;
-    top: 0; left: 0;
-    z-index: 0;
-    pointer-events: none;
-  }
-
-  header {
-    background: var(--color-bg-gradient);
-    text-align: center;
-    padding: 50px 20px 40px;
-    font-family: 'Orbitron', sans-serif;
-    box-shadow: 0 0 20px var(--color-shadow);
-    position: relative;
-    z-index: 10;
-  }
-  header h1 {
-    font-size: 3rem;
-    color: var(--color-primary);
-    text-shadow: 0 0 10px var(--color-primary);
-  }
-  header p {
-    margin-top: 8px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    color: #b6b6cc;
-  }
-
-  section {
-    max-width: 900px;
-    margin: 40px auto;
-    background: rgba(15, 10, 30, 0.85);
-    border-radius: 15px;
-    padding: 30px 25px;
-    box-shadow: 0 0 20px var(--color-shadow);
-    position: relative;
-    z-index: 10;
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  section.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  img.perfil {
-    display: block;
-    margin: 0 auto 25px;
-    border-radius: 50%;
-    width: 130px;
-    border: 3px solid var(--color-primary);
-    box-shadow: 0 0 15px var(--color-primary);
-  }
-
-  h2 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2rem;
-    color: var(--color-primary);
-    border-bottom: 2px solid var(--color-primary);
-    padding-bottom: 8px;
-    margin-bottom: 20px;
-  }
-
-  p, ul {
-    font-size: 1.05rem;
-    line-height: 1.5;
-    color: #d0d4e1;
-  }
-  ul li {
-    margin-bottom: 8px;
-  }
-
-  .tag {
-    background: linear-gradient(45deg, var(--color-primary), var(--color-secondary));
-    color: #0a0a1a;
-    padding: 8px 18px;
-    border-radius: 25px;
-    font-weight: 600;
-    margin: 5px 8px 10px 0;
-    display: inline-block;
-    box-shadow: 0 0 8px var(--color-primary);
-    transition: transform 0.3s ease;
-    cursor: default;
-  }
-  .tag:hover {
-    transform: scale(1.1);
-  }
-
-  .skills {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
   }
-  .skill-item {
-    text-align: center;
-    width: 100px;
-    transition: transform 0.4s ease;
-    cursor: default;
-  }
-  .skill-item i {
-    font-size: 2.5rem;
-    color: var(--color-primary);
-    text-shadow: 0 0 8px var(--color-primary);
-    margin-bottom: 6px;
-  }
-  .skill-item:hover {
-    transform: scale(1.15);
-  }
-
-  .projeto {
-    margin-bottom: 30px;
-  }
-  .projeto img {
+  
+  .hero::before {
+    content: '';
+    position: absolute;
     width: 100%;
-    border-radius: 15px;
-    margin-top: 12px;
-    box-shadow: 0 0 15px var(--color-primary);
-    transition: transform 0.3s ease;
+    height: 100%;
+    background: radial-gradient(circle at 30% 30%, rgba(0, 212, 255, 0.1) 0%, transparent 50%);
   }
-  .projeto img:hover {
-    transform: scale(1.03);
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 40px 0;
   }
-  .projeto h3 {
-    color: var(--color-secondary);
-    margin-bottom: 6px;
+  
+  .hero-badge {
+    display: inline-block;
+    background: var(--gradient-primary);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
   }
-  .projeto p {
-    color: #b0b4d1;
+  
+  .hero h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, #FFFFFF 0%, var(--color-secondary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
-
-  /* Contato */
-  .contact-icons {
+  
+  .hero h1 span {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.3rem;
+    color: var(--color-gray);
+    margin-bottom: 40px;
+    max-width: 600px;
+  }
+  
+  .hero-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+  }
+  
+  .stat-item {
     text-align: center;
   }
-  .contact-icons a {
-    color: var(--color-primary);
-    text-decoration: none;
-    margin: 12px 20px;
-    font-weight: 600;
-    padding: 12px 28px;
-    border: 2px solid var(--color-primary);
-    border-radius: 35px;
-    box-shadow: 0 0 12px var(--color-primary);
+  
+  .stat-number {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    display: block;
+    line-height: 1;
+  }
+  
+  .stat-label {
+    color: var(--color-gray);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 5px;
+  }
+
+  /* CTA Buttons */
+  .cta-button {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    background: var(--gradient-primary);
+    color: white;
+    padding: 18px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
     font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-primary);
   }
-  .contact-icons a:hover {
-    background: var(--color-primary);
-    color: var(--color-bg-dark);
-    box-shadow: 0 0 30px var(--color-primary);
+  
+  .cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 102, 255, 0.4);
   }
-
-  /* Emoji pequenas */
-  .emoji {
-    margin-right: 8px;
+  
+  .cta-button-secondary {
+    background: transparent;
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
   }
-
-  /* Responsivo */
-  @media (max-width: 650px) {
-    header h1 {
-      font-size: 2.3rem;
-    }
-    section {
-      margin: 25px 15px;
-      padding: 20px 15px;
-    }
-    .skills {
-      gap: 18px;
-    }
+  
+  .cta-button-secondary:hover {
+    background: rgba(0, 102, 255, 0.1);
   }
 
-  .projeto {
-  margin-bottom: 30px;
-}
-.projeto img {
-  width: 100%;
-  border-radius: 15px;
-  margin-top: 12px;
-  box-shadow: 0 0 15px var(--color-primary);
-  transition: transform 0.3s ease;
-}
-.projeto img:hover {
-  transform: scale(1.03);
-}
-.projeto h3 {
-  color: var(--color-secondary);
-  margin-bottom: 6px;
-}
-.projeto p {
-  color: #b0b4d1;
-}
+  /* Navegação */
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(5, 10, 26, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: none;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 40px;
+  }
+  
+  .nav-links a {
+    color: var(--color-light);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    position: relative;
+  }
+  
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--gradient-primary);
+    transition: width 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: var(--color-secondary);
+  }
+  
+  .nav-links a:hover::after {
+    width: 100%;
+  }
 
+  /* Seções */
+  section {
+    padding: 100px 0;
+    position: relative;
+  }
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .section-badge {
+    display: inline-block;
+    background: rgba(0, 212, 255, 0.1);
+    color: var(--color-secondary);
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+  }
+  
+  .section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--color-light);
+  }
+  
+  .section-subtitle {
+    color: var(--color-gray);
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+  }
 
-  .projeto {
+  /* Serviços */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+  }
+  
+  .service-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 40px 30px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(0, 212, 255, 0.2);
+    box-shadow: var(--shadow-primary);
+  }
+  
+  .service-icon {
+    width: 70px;
+    height: 70px;
+    background: var(--gradient-primary);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+  }
+  
+  .service-icon i {
+    font-size: 28px;
+    color: white;
+  }
+  
+  .service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: var(--color-light);
+  }
+  
+  .service-card p {
+    color: var(--color-gray);
+    margin-bottom: 20px;
+  }
+  
+  .service-features {
+    list-style: none;
+    margin-top: 20px;
+  }
+  
+  .service-features li {
+    color: var(--color-gray);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .service-features li::before {
+    content: '✓';
+    color: var(--color-secondary);
+    font-weight: bold;
+  }
+
+  /* Diferenciais */
+  .benefits {
+    background: var(--gradient-dark);
+  }
+  
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+  }
+  
+  .benefit-card {
+    text-align: center;
+    padding: 40px 20px;
+  }
+  
+  .benefit-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(0, 212, 255, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+  }
+  
+  .benefit-icon i {
+    font-size: 32px;
+    color: var(--color-secondary);
+  }
+  
+  .benefit-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--color-light);
+  }
+  
+  .benefit-card p {
+    color: var(--color-gray);
+  }
+
+  /* Projetos */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+  }
+  
+  .project-card {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-primary);
+    border-color: rgba(0, 212, 255, 0.2);
+  }
+  
+  .project-image {
+    height: 200px;
+    background: linear-gradient(135deg, #0066FF 0%, #7B61FF 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .project-card:hover .project-image img {
+    transform: scale(1.05);
+  }
+  
+  .project-content {
+    padding: 30px;
+  }
+  
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .project-tag {
+    background: rgba(0, 212, 255, 0.1);
+    color: var(--color-secondary);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+  
+  .project-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: var(--color-light);
+  }
+  
+  .project-card p {
+    color: var(--color-gray);
+    margin-bottom: 20px;
+  }
+
+  /* Processo */
+  .process-steps {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin-top: 60px;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 50px;
+    right: 50px;
+    height: 2px;
+    background: linear-gradient(90deg, 
+      var(--color-primary) 0%, 
+      var(--color-accent) 50%, 
+      var(--color-secondary) 100%);
+    z-index: 1;
+  }
+  
+  .process-step {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .step-number {
+    width: 80px;
+    height: 80px;
+    background: var(--gradient-dark);
+    border: 3px solid var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+  
+  .process-step h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--color-light);
+  }
+  
+  .process-step p {
+    color: var(--color-gray);
+    font-size: 0.9rem;
+  }
+
+  /* CTA Final */
+  .final-cta {
+    text-align: center;
+    background: var(--gradient-dark);
+    padding: 100px 20px;
+    border-radius: 30px;
+    margin: 100px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 212, 255, 0.05) 0%, transparent 70%);
+  }
+  
+  .final-cta h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .final-cta p {
+    color: var(--color-gray);
+    font-size: 1.2rem;
     margin-bottom: 40px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #ccc;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    z-index: 2;
   }
 
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-top: 10px;
+  /* WhatsApp flutuante */
+  .whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 1000;
+    animation: pulse 2s infinite;
+  }
+  
+  .whatsapp-float a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: var(--whatsapp-green);
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+    transition: all 0.3s ease;
+  }
+  
+  .whatsapp-float a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
+  }
+  
+  .whatsapp-float i {
+    font-size: 24px;
+  }
+  
+  .whatsapp-text {
+    display: none;
+  }
+  
+  @media (min-width: 768px) {
+    .whatsapp-text {
+      display: inline;
+    }
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
   }
 
-  .projeto {
-  background: rgba(255, 255, 255, 0.02);
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 0 8px var(--color-shadow);
-}
+  /* Footer */
+  footer {
+    background: rgba(5, 10, 26, 0.95);
+    padding: 80px 0 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+  }
+  
+  .footer-column h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    color: var(--color-light);
+  }
+  
+  .footer-links {
+    list-style: none;
+  }
+  
+  .footer-links li {
+    margin-bottom: 15px;
+  }
+  
+  .footer-links a {
+    color: var(--color-gray);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .footer-links a:hover {
+    color: var(--color-secondary);
+  }
+  
+  .contact-info {
+    color: var(--color-gray);
+  }
+  
+  .contact-info p {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--color-gray);
+    font-size: 0.9rem;
+  }
 
-.tag:hover {
-  transform: scale(1.1) rotate(-2deg);
-  box-shadow: 0 0 15px var(--color-secondary);
-}
-
-
-
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.1rem;
+    }
+    
+    .nav-links {
+      display: none;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+    }
+    
+    .process-steps::before {
+      display: none;
+    }
+    
+    .process-step {
+      flex: 100%;
+    }
+    
+    .whatsapp-float {
+      bottom: 20px;
+      right: 20px;
+    }
+    
+    .whatsapp-float a {
+      padding: 12px;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      justify-content: center;
+    }
+    
+    .whatsapp-text {
+      display: none;
+    }
+  }
 </style>
 </head>
 <body>
 
-<div id="particles-js"></div>
+<!-- WhatsApp flutuante -->
+<div class="whatsapp-float">
+  <a href="https://wa.me/5519983062154?text=Olá%20Eduardo,%20gostaria%20de%20automatizar%20minha%20empresa%20e%20fazer%20mais%20com%20menos!" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+    <span class="whatsapp-text">Solicitar Orçamento</span>
+  </a>
+</div>
 
-<header>
-  <h1>👨‍💻 Eduardo Prado</h1>
-  <p>Eng. de Software e Produção | Dados, Qualidade e Automação | Scrum Master</p>
-</header>
-
-<section>
-  <img src="logo.PNG" alt="Foto de perfil" class="perfil" />
-  <p><strong>📍 Atualmente:</strong> Grupo Adriano Cobuccio</p>
-
-  <h2><span class="emoji">🚀</span> Sobre Mim</h2>
-  <p>Engenheiro com experiência em <strong>Projetos, Melhoria Contínua</strong> e <strong>Automação</strong> nas áreas de PCP, PCM e Operações.</p>
-  <div>
-    <span class="tag">Scrum</span><span class="tag">Kanban</span><span class="tag">Lean</span><span class="tag">PDCA</span>
+<!-- Navegação -->
+<nav class="navbar">
+  <div class="container nav-container">
+    <a href="#" class="logo">AUTOMATIZE<span style="color: var(--color-secondary)">.AI</span></a>
+    <div class="nav-links">
+      <a href="#servicos">Serviços</a>
+      <a href="#diferenciais">Diferenciais</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#processo">Processo</a>
+      <a href="#contato">Contato</a>
+    </div>
   </div>
+</nav>
 
-  <h2><span class="emoji">💻</span> Stack e Tecnologias</h2>
-  <div>
-    <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">Django</span><span class="tag">SQL</span>
-    <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
-  </div>
-
-  <h2><span class="emoji">📊</span> Dados & Qualidade</h2>
-  <div>
-    <span class="tag">Pandas</span><span class="tag">Machine Learning</span><span class="tag">Dashboards</span><span class="tag">Excel</span><span class="tag">Power Query</span>
-  </div>
-
-  <h2><span class="emoji">💡</span> Propósito</h2>
-  <p>Transformar dados e processos em valor com <strong>inovação, inteligência e impacto real</strong>.</p>
-</section>
-
-<section>
-  <h2>Habilidades Técnicas</h2>
-  <div class="skills">
-    <div class="skill-item"><i class="fab fa-html5"></i><div>HTML5</div></div>
-    <div class="skill-item"><i class="fab fa-css3-alt"></i><div>CSS3</div></div>
-    <div class="skill-item"><i class="fab fa-js-square"></i><div>JavaScript</div></div>
-    <div class="skill-item"><i class="fab fa-react"></i><div>React</div></div>
-    <div class="skill-item"><i class="fas fa-database"></i><div>SQL</div></div>
-    <div class="skill-item"><i class="fab fa-github"></i><div>GitHub</div></div>
-    <div class="skill-item"><i class="fab fa-python"></i><div>Python</div></div>
-    <div class="skill-item"><i class="fab fa-node-js"></i><div>Node.js</div></div>
-    <div class="skill-item"><i class="fas fa-server"></i><div>Apache2</div></div>
-  </div>
-</section>
-
-<section>
-  <h2>Formação Acadêmica</h2>
-  <ul>
-    <li><strong>Engenharia de Produção</strong> - Centro Universitário Internacional (UNINTER)</li>
-    <li><strong>Bacharelado Engenharia de Software</strong> - Centro Universitário Internacional (UNINTER)</li>
-    <li><strong>Pós-Gestão de Projetos</strong> - ECID</li>
-  </ul>
-</section>
-
-<section>
-  <h2>🛠️ Trabalhos Realizados</h2>
-
-  <div class="projeto">
-    <h3>Gestão de Estoque – Uma Solução Simples para um Desafio Real</h3>
-    <p>🌱 <strong>Um Projeto em Evolução, Baseado na Prática</strong></p>
-<p>
-  Essa aplicação é o reflexo de um processo de aprendizado contínuo — tanto na área industrial quanto na de desenvolvimento de software. 
-  Não é uma solução definitiva, mas sim uma tentativa real de facilitar a rotina de quem, como eu, já sentiu na pele as dificuldades do chão de fábrica.
-</p>
-
-    <img src="1.jpeg" alt="Dashboard Vendas - Tela 1" />
-    <img src="2.jpeg" alt="Dashboard Vendas - Tela 2" />
-    <img src="3.jpeg" alt="Dashboard Vendas - Tela 3" />
-    <img src="4.jpeg" alt="Dashboard Vendas - Tela 4" />
-    <img src="5.jpeg" alt="Dashboard Vendas - Tela 5" />
-    <img src="6.jpeg" alt="Dashboard Vendas - Tela 6" />
-
-  </div>
-
-  <div class="projeto">
-    <h3>🛒 Sistema de Compras 🛒</h3>
-    <p>
-    Este é um sistema de compras que desenvolvi baseado em uma demanda de um cliente em crescimento. 
-    Ele é projetado para ser intuitivo e fácil de usar, com foco na experiência do usuário.
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container hero-content">
+    <span class="hero-badge">FAÇA MAIS COM MENOS</span>
+    <h1>Automatize sua <span>Empresa</span> e Multiplique Resultados</h1>
+    <p class="hero-subtitle">
+      Transformo processos manuais em sistemas inteligentes que economizam tempo, reduzem custos e aumentam a produtividade da sua empresa em até 70%.
     </p>
-    <p>
-    Vou continuar aprimorando e aprendendo. Se você tiver algum feedback ou sugestões, adoraria ouvir!
-    </p>
-    <img src="7.jpeg" alt="Dashboard Vendas - Tela 7" />
-  </div>
-
-
- <div class="projeto">
-    <h3> 🚀 Gestão à Vista 🚀 </h3>
-   
-<p>
-  Este projeto que desenvolvi consiste em um sistema de controle de indicadores para 16 setores da organização. 
-  O site foi criado com o objetivo de otimizar a gestão e o monitoramento dos principais KPIs, oferecendo uma visão clara e prática do desempenho em tempo real.
-</p>
-<p>
-  Acredito que a integração entre engenharia de produção e tecnologia da informação é essencial para impulsionar a eficiência operacional e elevar a qualidade em qualquer empresa.
-</p>
-
-    <img src="8.JPG" alt="Dashboard Vendas - Tela 8" />
-    <img src="9.JPG" alt="Dashboard Vendas - Tela 9" />
-  </div>
-
-
- <div class="projeto">
-    <h3> 🚀 Projeto de Validação de Prospecção Comercial 🚀 </h3>
-   
-<p>
-  Este projeto tem como objetivo apoiar o trabalho dos representantes comerciais durante visitas a lojistas. 
-  Por meio de um formulário digital, os representantes registram as visitas com captura automática da geolocalização, 
-  garantindo mais transparência e rastreabilidade no processo.
-</p>
-
-<p>
-  <strong>📊 Relatórios Automatizados:</strong> Também foi implementada uma funcionalidade que gera relatórios automaticamente, 
-  calculando os valores a receber com base nas visitas realizadas. Isso reduz o trabalho manual e garante maior precisão nos dados.
-</p>
-
-<p>
-  <strong>✅ Resultados:</strong> O sistema já está em operação, validando as visitas em campo e contribuindo significativamente para 
-  a otimização da gestão da equipe comercial.
-</p>
-
-    <img src="10.jpeg" alt="Dashboard Vendas - Tela 10" />
-    <img src="11.jpeg" alt="Dashboard Vendas - Tela 11" />
+    <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 40px;">
+      <a href="#contato" class="cta-button">
+        <i class="fas fa-rocket"></i> Transformar Minha Empresa
+      </a>
+      <a href="#projetos" class="cta-button cta-button-secondary">
+        <i class="fas fa-eye"></i> Ver Casos de Sucesso
+      </a>
+    </div>
+    
+    <div class="hero-stats">
+      <div class="stat-item">
+        <span class="stat-number">+70%</span>
+        <span class="stat-label">Produtividade</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">-40%</span>
+        <span class="stat-label">Custos Operacionais</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">+50</span>
+        <span class="stat-label">Projetos Entregues</span>
+      </div>
+    </div>
   </div>
 </section>
 
-
-<section>
-  <h2>📞 Contato</h2>
-  <div class="contact-icons">
-    <a href="mailto:eduardo.prado@email.com" target="_blank">
-      <i class="fas fa-envelope"></i> Email
-    </a>
-    <a href="https://www.linkedin.com/in/eduardoprado" target="_blank">
-      <i class="fab fa-linkedin"></i> LinkedIn
-    </a>
-    <a href="https://github.com/eduardoprado" target="_blank">
-      <i class="fab fa-github"></i> GitHub
-    </a>
-    <a href="https://wa.me/5519983062154" target="_blank">
-      <i class="fab fa-whatsapp"></i> WhatsApp
-    </a>
+<!-- Serviços -->
+<section id="servicos">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">SOLUÇÕES COMPLETAS</span>
+      <h2 class="section-title">O que a Automação pode fazer pela sua Empresa</h2>
+      <p class="section-subtitle">Implemento sistemas inteligentes que transformam a maneira como sua empresa opera</p>
+    </div>
+    
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <h3>Gestão Inteligente</h3>
+        <p>Sistemas de gestão completos para estoque, compras, vendas e produção com dashboards em tempo real.</p>
+        <ul class="service-features">
+          <li>Dashboard em tempo real</li>
+          <li>Relatórios automatizados</li>
+          <li>Alertas inteligentes</li>
+          <li>Integração total</li>
+        </ul>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-robot"></i>
+        </div>
+        <h3>Automação de Processos</h3>
+        <p>Elimine tarefas repetitivas e reduza erros humanos com automação inteligente de processos empresariais.</p>
+        <ul class="service-features">
+          <li>RPA (Robotic Process Automation)</li>
+          <li>Workflows automatizados</li>
+          <li>Integração entre sistemas</li>
+          <li>Redução de 80% em tarefas manuais</li>
+        </ul>
+      </div>
+      
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="fas fa-database"></i>
+        </div>
+        <h3>Business Intelligence</h3>
+        <p>Transforme dados em decisões estratégicas com dashboards avançados e análise preditiva.</p>
+        <ul class="service-features">
+          <li>Dashboards interativos</li>
+          <li>Análise preditiva</li>
+          <li>KPI's automatizados</li>
+          <li>Relatórios personalizados</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- Diferenciais -->
+<section id="diferenciais" class="benefits">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">POR QUE ESCOLHER MEUS SERVIÇOS</span>
+      <h2 class="section-title">Diferenciais que Fazem a Diferença</h2>
+      <p class="section-subtitle">Mais do que tecnologia, entrego resultados mensuráveis para seu negócio</p>
+    </div>
+    
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fas fa-bolt"></i>
+        </div>
+        <h3>Resultados Rápidos</h3>
+        <p>Primeiras automações funcionando em menos de 15 dias</p>
+      </div>
+      
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <h3>Sem Risco</h3>
+        <p>Prova de conceito gratuita antes de qualquer compromisso</p>
+      </div>
+      
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fas fa-handshake"></i>
+        </div>
+        <h3>Parceria Total</h3>
+        <p>Acompanhamento contínuo e suporte dedicado</p>
+      </div>
+      
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <i class="fas fa-chart-bar"></i>
+        </div>
+        <h3>ROI Garantido</h3>
+        <p>Retorno sobre investimento em média de 3 meses</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projetos -->
+<section id="projetos">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">CASOS DE SUCESSO</span>
+      <h2 class="section-title">Transformação Real, Resultados Reais</h2>
+      <p class="section-subtitle">Projetos que revolucionaram a operação de empresas como a sua</p>
+    </div>
+    
+    <div class="projects-grid">
+      <div class="project-card">
+        <div class="project-image">
+          <img src="1.jpeg" alt="Sistema de Gestão de Estoque">
+        </div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">Automação</span>
+            <span class="project-tag">Gestão</span>
+          </div>
+          <h3>Sistema de Gestão de Estoque</h3>
+          <p>Redução de 65% no tempo de inventário e eliminação de erros de contagem. Controle total em tempo real.</p>
+          <a href="https://wa.me/5519983062154?text=Gostaria%20de%20saber%20mais%20sobre%20o%20sistema%20de%20gestão%20de%20estoque" class="cta-button-secondary" style="padding: 10px 20px; font-size: 0.9rem;">
+            Saber Mais
+          </a>
+        </div>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-image">
+          <img src="8.JPG" alt="Gestão à Vista">
+        </div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">Dashboard</span>
+            <span class="project-tag">KPI's</span>
+          </div>
+          <h3>Gestão à Vista - 16 Setores</h3>
+          <p>Controle de indicadores para 16 setores simultâneos. Tomada de decisão baseada em dados em tempo real.</p>
+          <a href="https://wa.me/5519983062154?text=Gostaria%20de%20saber%20mais%20sobre%20o%20sistema%20Gestão%20à%20Vista" class="cta-button-secondary" style="padding: 10px 20px; font-size: 0.9rem;">
+            Saber Mais
+          </a>
+        </div>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-image">
+          <img src="10.jpeg" alt="Validação Comercial">
+        </div>
+        <div class="project-content">
+          <div class="project-tags">
+            <span class="project-tag">Mobile</span>
+            <span class="project-tag">Geolocalização</span>
+          </div>
+          <h3>Validação de Prospecção Comercial</h3>
+          <p>Sistema mobile com geolocalização para validação de visitas comerciais. Transparência total e relatórios automáticos.</p>
+          <a href="https://wa.me/5519983062154?text=Gostaria%20de%20saber%20mais%20sobre%20o%20sistema%20de%20validação%20comercial" class="cta-button-secondary" style="padding: 10px 20px; font-size: 0.9rem;">
+            Saber Mais
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Processo -->
+<section id="processo">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">COMO FUNCIONA</span>
+      <h2 class="section-title">Do Problema à Solução em 4 Passos</h2>
+      <p class="section-subtitle">Metodologia comprovada que garante resultados desde o primeiro dia</p>
+    </div>
+    
+    <div class="process-steps">
+      <div class="process-step">
+        <div class="step-number">1</div>
+        <h3>Diagnóstico Gratuito</h3>
+        <p>Análise completa dos seus processos para identificar oportunidades de automação</p>
+      </div>
+      
+      <div class="process-step">
+        <div class="step-number">2</div>
+        <h3>Prova de Conceito</h3>
+        <p>Implementação de uma automação piloto para validar os resultados antes do projeto completo</p>
+      </div>
+      
+      <div class="process-step">
+        <div class="step-number">3</div>
+        <h3>Desenvolvimento</h3>
+        <p>Criação da solução completa com acompanhamento em tempo real</p>
+      </div>
+      
+      <div class="process-step">
+        <div class="step-number">4</div>
+        <h3>Entrega & Suporte</h3>
+        <p>Implementação total e suporte contínuo para garantir máximo desempenho</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Final -->
+<div class="container">
+  <div class="final-cta">
+    <h2>Pronto para Transformar sua Empresa?</h2>
+    <p>Agende uma consultoria gratuita de 30 minutos e descubra como automatizar seus processos para fazer mais com menos recursos.</p>
+    <a href="https://wa.me/5519983062154?text=Olá%20Eduardo,%20gostaria%20de%20agendar%20uma%20consulta%20gratuita%20para%20automatizar%20minha%20empresa!" target="_blank" class="cta-button" style="font-size: 1.2rem; padding: 20px 50px;">
+      <i class="fab fa-whatsapp"></i> Agendar Consultoria Gratuita
+    </a>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer id="contato">
+  <div class="container">
+    <div class="footer-content">
+      <div>
+        <h3>Eduardo Prado</h3>
+        <p style="color: var(--color-gray); margin-top: 10px;">Engenheiro de Software especializado em transformar empresas através da automação inteligente.</p>
+      </div>
+      
+      <div>
+        <h3>Contato Direto</h3>
+        <div class="contact-info">
+          <p><i class="fab fa-whatsapp"></i> (19) 98306-2154</p>
+          <p><i class="fas fa-envelope"></i> eduardo.prado@email.com</p>
+          <p><i class="fas fa-clock"></i> Seg-Sex: 9h às 18h</p>
+        </div>
+      </div>
+      
+      <div>
+        <h3>Links Rápidos</h3>
+        <ul class="footer-links">
+          <li><a href="#servicos"><i class="fas fa-arrow-right"></i> Serviços</a></li>
+          <li><a href="#projetos"><i class="fas fa-arrow-right"></i> Projetos</a></li>
+          <li><a href="#processo"><i class="fas fa-arrow-right"></i> Processo</a></li>
+          <li><a href="https://www.linkedin.com/in/eduardoprado" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2024 Eduardo Prado - Automatize sua Empresa. Todos os direitos reservados.</p>
+      <p style="margin-top: 10px; font-size: 0.8rem; color: var(--color-gray);">Faça mais com menos - Transforme processos em resultados</p>
+    </div>
+  </div>
+</footer>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const sections = document.querySelectorAll("section");
+  // Navegação suave
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      if(targetId === '#') return;
+      
+      const targetElement = document.querySelector(targetId);
+      if(targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 80,
+          behavior: 'smooth'
+        });
+      }
+    });
+  });
+
+  // Animação do navbar ao scroll
+  window.addEventListener('scroll', function() {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 100) {
+      navbar.style.background = 'rgba(5, 10, 26, 0.98)';
+      navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+    } else {
+      navbar.style.background = 'rgba(5, 10, 26, 0.95)';
+      navbar.style.boxShadow = 'none';
+    }
+  });
+
+  // Contador animado
+  const counters = document.querySelectorAll('.stat-number');
+  const speed = 200;
+
+  const animateCounter = () => {
+    counters.forEach(counter => {
+      const target = +counter.innerText.replace('+', '').replace('-', '');
+      const prefix = counter.innerText.includes('+') ? '+' : '-';
+      const increment = target / speed;
+      let current = 0;
+
+      const updateCounter = () => {
+        if(current < target) {
+          current += increment;
+          counter.innerText = prefix + Math.ceil(current);
+          setTimeout(updateCounter, 1);
+        } else {
+          counter.innerText = prefix + target;
+        }
+      };
+
+      updateCounter();
+    });
+  };
+
+  // Inicia contador quando a seção estiver visível
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add("visible");
+      if(entry.isIntersecting) {
+        animateCounter();
+      }
     });
-  }, { threshold: 0.1 });
+  }, { threshold: 0.5 });
 
-  sections.forEach(section => observer.observe(section));
-});
-
-</script>
-
-<!-- Script partículas -->
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-<script>
-  particlesJS('particles-js', {
-    particles: {
-      number: { value: 60, density: { enable: true, value_area: 800 } },
-      color: { value: "#00fff7" },
-      shape: { type: "circle" },
-      opacity: { value: 0.3, random: true },
-      size: { value: 3, random: true },
-      move: { enable: true, speed: 1.5, direction: "none", random: true, out_mode: "out" }
-    },
-    interactivity: {
-      detect_on: "canvas",
-      events: { onhover: { enable: true, mode: "repulse" }, onclick: { enable: true, mode: "push" } },
-      modes: { repulse: { distance: 80, duration: 0.4 }, push: { particles_nb: 4 } }
-    },
-    retina_detect: true
-  });
+  observer.observe(document.querySelector('.hero-stats'));
 </script>
 
 </body>
