@@ -3,25 +3,27 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Eduardo Prado | Automatize sua Empresa - Faça Mais com Menos</title>
-<meta name="description" content="Automatize processos, otimize operações e faça mais com menos. Soluções em engenharia de software e automação empresarial.">
+<title>Eduardo Prado | Automação Empresarial Premium</title>
+<meta name="description" content="Soluções de automação empresarial premium. Transforme sua empresa com tecnologia inteligente e design sofisticado.">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet" />
-<link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚜️</text></svg>">
 <style>
-  /* Cores & variáveis modernas */
+  /* Cores & variáveis premium */
   :root {
-    --color-primary: #0066FF;
-    --color-secondary: #00D4FF;
-    --color-accent: #7B61FF;
-    --color-dark: #0A0F2B;
-    --color-darker: #050A1A;
+    --color-gold: #D4AF37;
+    --color-gold-light: #FFD700;
+    --color-gold-dark: #B8860B;
+    --color-black: #000000;
+    --color-dark: #0A0A0A;
+    --color-darker: #050505;
+    --color-gray: #2A2A2A;
     --color-light: #FFFFFF;
-    --color-gray: #8A94B3;
-    --gradient-primary: linear-gradient(135deg, #0066FF 0%, #00D4FF 100%);
-    --gradient-dark: linear-gradient(135deg, #050A1A 0%, #0A0F2B 100%);
-    --shadow-primary: 0 10px 30px rgba(0, 102, 255, 0.2);
-    --shadow-accent: 0 10px 30px rgba(123, 97, 255, 0.3);
+    --gradient-gold: linear-gradient(135deg, #D4AF37 0%, #FFD700 50%, #B8860B 100%);
+    --gradient-black: linear-gradient(135deg, #000000 0%, #1A1A1A 100%);
+    --shadow-gold: 0 10px 30px rgba(212, 175, 55, 0.3);
+    --shadow-dark: 0 10px 30px rgba(0, 0, 0, 0.5);
+    --border-gold: 1px solid rgba(212, 175, 55, 0.3);
     --whatsapp-green: #25D366;
   }
 
@@ -35,8 +37,8 @@
   }
   
   body {
-    font-family: 'Inter', sans-serif;
-    background: var(--color-darker);
+    font-family: 'Montserrat', sans-serif;
+    background: var(--color-black);
     color: var(--color-light);
     overflow-x: hidden;
     line-height: 1.6;
@@ -49,9 +51,9 @@
     padding: 0 20px;
   }
 
-  /* Header hero */
+  /* Header hero premium */
   .hero {
-    background: var(--gradient-dark);
+    background: var(--color-black);
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -62,9 +64,13 @@
   .hero::before {
     content: '';
     position: absolute;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle at 30% 30%, rgba(0, 212, 255, 0.1) 0%, transparent 50%);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
   }
   
   .hero-content {
@@ -76,30 +82,31 @@
   
   .hero-badge {
     display: inline-block;
-    background: var(--gradient-primary);
-    color: white;
+    background: transparent;
+    color: var(--color-gold);
     padding: 8px 20px;
     border-radius: 30px;
     font-size: 0.9rem;
     font-weight: 600;
     margin-bottom: 30px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    border: var(--border-gold);
+    text-transform: uppercase;
+    font-family: 'Cinzel', serif;
   }
   
   .hero h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 3.5rem;
-    font-weight: 900;
-    line-height: 1.2;
+    font-family: 'Cinzel', serif;
+    font-size: 3.8rem;
+    font-weight: 700;
+    line-height: 1.1;
     margin-bottom: 20px;
-    background: linear-gradient(135deg, #FFFFFF 0%, var(--color-secondary) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--color-gold);
+    text-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
   }
   
   .hero h1 span {
-    background: var(--gradient-primary);
+    background: var(--gradient-gold);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -107,83 +114,111 @@
   
   .hero-subtitle {
     font-size: 1.3rem;
-    color: var(--color-gray);
+    color: rgba(255, 255, 255, 0.7);
     margin-bottom: 40px;
     max-width: 600px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
   }
   
   .hero-stats {
     display: flex;
-    gap: 40px;
-    margin-top: 50px;
+    gap: 50px;
+    margin-top: 60px;
     flex-wrap: wrap;
+    border-top: var(--border-gold);
+    padding-top: 40px;
   }
   
   .stat-item {
     text-align: center;
+    flex: 1;
+    min-width: 150px;
   }
   
   .stat-number {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2.5rem;
+    font-family: 'Cinzel', serif;
+    font-size: 2.8rem;
     font-weight: 700;
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--color-gold);
     display: block;
     line-height: 1;
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
   }
   
   .stat-label {
-    color: var(--color-gray);
+    color: rgba(255, 255, 255, 0.6);
     font-size: 0.9rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 5px;
+    letter-spacing: 2px;
+    margin-top: 10px;
+    font-weight: 500;
   }
 
-  /* CTA Buttons */
+  /* CTA Buttons premium */
   .cta-button {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    background: var(--gradient-primary);
-    color: white;
+    gap: 15px;
+    background: transparent;
+    color: var(--color-gold);
     padding: 18px 40px;
-    border-radius: 50px;
+    border-radius: 0;
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1.1rem;
     transition: all 0.3s ease;
-    box-shadow: var(--shadow-primary);
+    border: 2px solid var(--color-gold);
+    position: relative;
+    overflow: hidden;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+  }
+  
+  .cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+    transition: left 0.5s ease;
+  }
+  
+  .cta-button:hover::before {
+    left: 100%;
   }
   
   .cta-button:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 102, 255, 0.4);
+    background: rgba(212, 175, 55, 0.1);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-gold);
   }
   
-  .cta-button-secondary {
-    background: transparent;
-    border: 2px solid var(--color-primary);
-    color: var(--color-primary);
+  .cta-button-primary {
+    background: var(--gradient-gold);
+    color: var(--color-black);
+    border: none;
+    font-weight: 700;
   }
   
-  .cta-button-secondary:hover {
-    background: rgba(0, 102, 255, 0.1);
+  .cta-button-primary:hover {
+    background: var(--gradient-gold);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-gold);
   }
 
-  /* Navegação */
+  /* Navegação premium */
   .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(5, 10, 26, 0.95);
+    background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
     padding: 20px 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: var(--border-gold);
   }
   
   .nav-container {
@@ -193,14 +228,16 @@
   }
   
   .logo {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Cinzel', serif;
     font-size: 1.8rem;
-    font-weight: 900;
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-weight: 700;
+    color: var(--color-gold);
     text-decoration: none;
+    letter-spacing: 1px;
+  }
+  
+  .logo span {
+    color: var(--color-light);
   }
   
   .nav-links {
@@ -211,9 +248,11 @@
   .nav-links a {
     color: var(--color-light);
     text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
+    font-weight: 500;
+    transition: all 0.3s ease;
     position: relative;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
   }
   
   .nav-links a::after {
@@ -222,13 +261,13 @@
     bottom: -5px;
     left: 0;
     width: 0;
-    height: 2px;
-    background: var(--gradient-primary);
+    height: 1px;
+    background: var(--gradient-gold);
     transition: width 0.3s ease;
   }
   
   .nav-links a:hover {
-    color: var(--color-secondary);
+    color: var(--color-gold);
   }
   
   .nav-links a:hover::after {
@@ -239,6 +278,11 @@
   section {
     padding: 100px 0;
     position: relative;
+    background: var(--color-black);
+  }
+  
+  .section-alt {
+    background: var(--color-darker);
   }
   
   .section-header {
@@ -248,32 +292,37 @@
   
   .section-badge {
     display: inline-block;
-    background: rgba(0, 212, 255, 0.1);
-    color: var(--color-secondary);
-    padding: 8px 20px;
+    background: transparent;
+    color: var(--color-gold);
+    padding: 8px 25px;
     border-radius: 30px;
     font-size: 0.9rem;
     font-weight: 600;
     margin-bottom: 20px;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
+    border: var(--border-gold);
+    text-transform: uppercase;
+    font-family: 'Cinzel', serif;
   }
   
   .section-title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2.5rem;
+    font-family: 'Cinzel', serif;
+    font-size: 2.8rem;
     font-weight: 700;
     margin-bottom: 20px;
-    color: var(--color-light);
+    color: var(--color-gold);
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
   }
   
   .section-subtitle {
-    color: var(--color-gray);
+    color: rgba(255, 255, 255, 0.7);
     font-size: 1.1rem;
     max-width: 600px;
     margin: 0 auto;
+    font-weight: 300;
   }
 
-  /* Serviços */
+  /* Serviços premium */
   .services-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -283,8 +332,8 @@
   
   .service-card {
     background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
+    border: var(--border-gold);
+    border-radius: 0;
     padding: 40px 30px;
     transition: all 0.3s ease;
     position: relative;
@@ -293,36 +342,50 @@
   
   .service-card:hover {
     transform: translateY(-10px);
-    background: rgba(255, 255, 255, 0.03);
-    border-color: rgba(0, 212, 255, 0.2);
-    box-shadow: var(--shadow-primary);
+    background: rgba(212, 175, 55, 0.05);
+    box-shadow: var(--shadow-gold);
+  }
+  
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 0;
+    background: var(--gradient-gold);
+    transition: height 0.3s ease;
+  }
+  
+  .service-card:hover::before {
+    height: 100%;
   }
   
   .service-icon {
     width: 70px;
     height: 70px;
-    background: var(--gradient-primary);
-    border-radius: 15px;
+    background: transparent;
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 25px;
-  }
-  
-  .service-icon i {
+    border: 2px solid var(--color-gold);
+    color: var(--color-gold);
     font-size: 28px;
-    color: white;
   }
   
   .service-card h3 {
+    font-family: 'Cinzel', serif;
     font-size: 1.5rem;
     margin-bottom: 15px;
-    color: var(--color-light);
+    color: var(--color-gold);
   }
   
   .service-card p {
-    color: var(--color-gray);
+    color: rgba(255, 255, 255, 0.7);
     margin-bottom: 20px;
+    font-weight: 300;
   }
   
   .service-features {
@@ -331,131 +394,139 @@
   }
   
   .service-features li {
-    color: var(--color-gray);
-    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
     gap: 10px;
+    font-size: 0.95rem;
   }
   
   .service-features li::before {
-    content: '✓';
-    color: var(--color-secondary);
+    content: '✦';
+    color: var(--color-gold);
     font-weight: bold;
   }
 
-  /* Diferenciais */
-  .benefits {
-    background: var(--gradient-dark);
+  /* Galeria de Projetos */
+  .projects-showcase {
+    margin-top: 60px;
   }
   
-  .benefits-grid {
+  .project-category {
+    margin-bottom: 80px;
+  }
+  
+  .category-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    color: var(--color-gold);
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: var(--border-gold);
+    display: inline-block;
+  }
+  
+  .project-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    margin-top: 50px;
-  }
-  
-  .benefit-card {
-    text-align: center;
-    padding: 40px 20px;
-  }
-  
-  .benefit-icon {
-    width: 80px;
-    height: 80px;
-    background: rgba(0, 212, 255, 0.1);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 25px;
-  }
-  
-  .benefit-icon i {
-    font-size: 32px;
-    color: var(--color-secondary);
-  }
-  
-  .benefit-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 15px;
-    color: var(--color-light);
-  }
-  
-  .benefit-card p {
-    color: var(--color-gray);
-  }
-
-  /* Projetos */
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    margin-top: 50px;
+    margin-bottom: 40px;
   }
   
-  .project-card {
-    background: rgba(255, 255, 255, 0.02);
-    border-radius: 20px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-  }
-  
-  .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: var(--shadow-primary);
-    border-color: rgba(0, 212, 255, 0.2);
-  }
-  
-  .project-image {
-    height: 200px;
-    background: linear-gradient(135deg, #0066FF 0%, #7B61FF 100%);
+  .gallery-item {
     position: relative;
     overflow: hidden;
+    border: var(--border-gold);
+    height: 250px;
+    cursor: pointer;
+    transition: all 0.3s ease;
   }
   
-  .project-image img {
+  .gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-gold);
+  }
+  
+  .gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
   }
   
-  .project-card:hover .project-image img {
+  .gallery-item:hover img {
     transform: scale(1.05);
   }
   
-  .project-content {
+  .gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery-item:hover .gallery-overlay {
+    transform: translateY(0);
+  }
+  
+  .gallery-overlay h4 {
+    color: var(--color-gold);
+    font-family: 'Cinzel', serif;
+    margin-bottom: 5px;
+  }
+  
+  .gallery-overlay p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+  }
+
+  /* Testemunhos */
+  .testimonials {
+    background: var(--color-darker);
+    position: relative;
+  }
+  
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+  }
+  
+  .testimonial-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: var(--border-gold);
     padding: 30px;
+    position: relative;
   }
   
-  .project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 15px;
+  .testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 4rem;
+    color: var(--color-gold);
+    opacity: 0.2;
+    font-family: 'Cinzel', serif;
   }
   
-  .project-tag {
-    background: rgba(0, 212, 255, 0.1);
-    color: var(--color-secondary);
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-  }
-  
-  .project-card h3 {
-    font-size: 1.4rem;
-    margin-bottom: 15px;
-    color: var(--color-light);
-  }
-  
-  .project-card p {
-    color: var(--color-gray);
+  .testimonial-text {
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
     margin-bottom: 20px;
+    font-size: 1rem;
+  }
+  
+  .testimonial-author {
+    color: var(--color-gold);
+    font-weight: 600;
+    font-family: 'Cinzel', serif;
   }
 
   /* Processo */
@@ -468,121 +539,111 @@
     gap: 40px;
   }
   
-  .process-steps::before {
-    content: '';
-    position: absolute;
-    top: 40px;
-    left: 50px;
-    right: 50px;
-    height: 2px;
-    background: linear-gradient(90deg, 
-      var(--color-primary) 0%, 
-      var(--color-accent) 50%, 
-      var(--color-secondary) 100%);
-    z-index: 1;
-  }
-  
   .process-step {
     flex: 1;
     min-width: 200px;
     text-align: center;
     position: relative;
-    z-index: 2;
   }
   
   .step-number {
     width: 80px;
     height: 80px;
-    background: var(--gradient-dark);
-    border: 3px solid var(--color-primary);
-    border-radius: 50%;
+    background: var(--color-black);
+    border: 2px solid var(--color-gold);
+    border-radius: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0 auto 20px;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.5rem;
+    font-family: 'Cinzel', serif;
+    font-size: 1.8rem;
     font-weight: 700;
-    color: var(--color-primary);
+    color: var(--color-gold);
+    position: relative;
+  }
+  
+  .step-number::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -60px;
+    width: 60px;
+    height: 1px;
+    background: var(--color-gold);
+    opacity: 0.3;
+  }
+  
+  .process-step:first-child .step-number::before {
+    display: none;
   }
   
   .process-step h3 {
-    font-size: 1.2rem;
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
     margin-bottom: 10px;
-    color: var(--color-light);
+    color: var(--color-gold);
   }
   
   .process-step p {
-    color: var(--color-gray);
+    color: rgba(255, 255, 255, 0.7);
     font-size: 0.9rem;
   }
 
   /* CTA Final */
   .final-cta {
     text-align: center;
-    background: var(--gradient-dark);
+    background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><pattern id="pattern" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M0,0 L10,10 M10,0 L0,10" stroke="%23D4AF37" stroke-width="0.5" opacity="0.1"/></pattern><rect width="100" height="100" fill="url(%23pattern)"/></svg>');
     padding: 100px 20px;
-    border-radius: 30px;
+    border: var(--border-gold);
     margin: 100px 0;
     position: relative;
-    overflow: hidden;
-  }
-  
-  .final-cta::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(0, 212, 255, 0.05) 0%, transparent 70%);
   }
   
   .final-cta h2 {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Cinzel', serif;
     font-size: 2.8rem;
     margin-bottom: 20px;
-    position: relative;
-    z-index: 2;
+    color: var(--color-gold);
   }
   
   .final-cta p {
-    color: var(--color-gray);
+    color: rgba(255, 255, 255, 0.8);
     font-size: 1.2rem;
     margin-bottom: 40px;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
-    position: relative;
-    z-index: 2;
   }
 
-  /* WhatsApp flutuante */
+  /* WhatsApp flutuante premium */
   .whatsapp-float {
     position: fixed;
     bottom: 30px;
     right: 30px;
     z-index: 1000;
-    animation: pulse 2s infinite;
   }
   
   .whatsapp-float a {
     display: flex;
     align-items: center;
     gap: 15px;
-    background: var(--whatsapp-green);
-    color: white;
+    background: var(--color-gold);
+    color: var(--color-black);
     padding: 15px 25px;
-    border-radius: 50px;
+    border-radius: 0;
     text-decoration: none;
-    font-weight: 600;
-    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+    font-weight: 700;
+    box-shadow: var(--shadow-gold);
     transition: all 0.3s ease;
+    font-family: 'Cinzel', serif;
+    border: none;
   }
   
   .whatsapp-float a:hover {
     transform: scale(1.05);
-    box-shadow: 0 15px 40px rgba(37, 211, 102, 0.6);
+    background: var(--color-gold-light);
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
   }
   
   .whatsapp-float i {
@@ -598,18 +659,12 @@
       display: inline;
     }
   }
-  
-  @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-  }
 
-  /* Footer */
+  /* Footer premium */
   footer {
-    background: rgba(5, 10, 26, 0.95);
+    background: var(--color-darker);
     padding: 80px 0 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: var(--border-gold);
   }
   
   .footer-content {
@@ -620,10 +675,10 @@
   }
   
   .footer-column h3 {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Cinzel', serif;
     font-size: 1.3rem;
     margin-bottom: 25px;
-    color: var(--color-light);
+    color: var(--color-gold);
   }
   
   .footer-links {
@@ -635,20 +690,21 @@
   }
   
   .footer-links a {
-    color: var(--color-gray);
+    color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     display: flex;
     align-items: center;
     gap: 10px;
   }
   
   .footer-links a:hover {
-    color: var(--color-secondary);
+    color: var(--color-gold);
+    transform: translateX(5px);
   }
   
   .contact-info {
-    color: var(--color-gray);
+    color: rgba(255, 255, 255, 0.7);
   }
   
   .contact-info p {
@@ -661,9 +717,53 @@
   .footer-bottom {
     text-align: center;
     padding-top: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    color: var(--color-gray);
+    border-top: var(--border-gold);
+    color: rgba(255, 255, 255, 0.5);
     font-size: 0.9rem;
+  }
+  
+  .footer-bottom p:first-child {
+    color: var(--color-gold);
+    font-family: 'Cinzel', serif;
+    margin-bottom: 10px;
+  }
+
+  /* Modal para imagens */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    position: relative;
+  }
+  
+  .modal-content img {
+    width: 100%;
+    height: auto;
+    border: 2px solid var(--color-gold);
+  }
+  
+  .close-modal {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: var(--color-gold);
+    font-size: 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
   }
 
   /* Responsividade */
@@ -684,12 +784,12 @@
       font-size: 2rem;
     }
     
-    .process-steps::before {
-      display: none;
+    .process-steps {
+      flex-direction: column;
     }
     
-    .process-step {
-      flex: 100%;
+    .step-number::before {
+      display: none;
     }
     
     .whatsapp-float {
@@ -699,7 +799,7 @@
     
     .whatsapp-float a {
       padding: 12px;
-      border-radius: 50%;
+      border-radius: 0;
       width: 60px;
       height: 60px;
       justify-content: center;
@@ -708,6 +808,10 @@
     .whatsapp-text {
       display: none;
     }
+    
+    .gallery-item {
+      height: 200px;
+    }
   }
 </style>
 </head>
@@ -715,21 +819,29 @@
 
 <!-- WhatsApp flutuante -->
 <div class="whatsapp-float">
-  <a href="https://wa.me/5519983062154?text=Olá%20Eduardo,%20gostaria%20de%20automatizar%20minha%20empresa%20e%20fazer%20mais%20com%20menos!" target="_blank">
+  <a href="https://wa.me/5519983062154?text=Olá%20Eduardo,%20gostaria%20de%20uma%20solução%20premium%20para%20minha%20empresa!" target="_blank">
     <i class="fab fa-whatsapp"></i>
-    <span class="whatsapp-text">Solicitar Orçamento</span>
+    <span class="whatsapp-text">SOLICITE SEU ORÇAMENTO</span>
   </a>
+</div>
+
+<!-- Modal para imagens -->
+<div id="imageModal" class="modal">
+  <div class="modal-content">
+    <button class="close-modal">&times;</button>
+    <img id="modalImage" src="" alt="Imagem ampliada">
+  </div>
 </div>
 
 <!-- Navegação -->
 <nav class="navbar">
   <div class="container nav-container">
-    <a href="#" class="logo">AUTOMATIZE<span style="color: var(--color-secondary)">.AI</span></a>
+    <a href="#" class="logo">EDUARDO<span>PRADO</span></a>
     <div class="nav-links">
       <a href="#servicos">Serviços</a>
-      <a href="#diferenciais">Diferenciais</a>
-      <a href="#projetos">Projetos</a>
-      <a href="#processo">Processo</a>
+      <a href="#projetos">Portfólio</a>
+      <a href="#processo">Metodologia</a>
+      <a href="#sobre">Sobre</a>
       <a href="#contato">Contato</a>
     </div>
   </div>
@@ -738,58 +850,63 @@
 <!-- Hero Section -->
 <section class="hero">
   <div class="container hero-content">
-    <span class="hero-badge">FAÇA MAIS COM MENOS</span>
-    <h1>Automatize sua <span>Empresa</span> e Multiplique Resultados</h1>
+    <span class="hero-badge">Excelência em Automação</span>
+    <h1>AUTOMATIZE.AI<span></h1>
     <p class="hero-subtitle">
-      Transformo processos manuais em sistemas inteligentes que economizam tempo, reduzem custos e aumentam a produtividade da sua empresa em até 70%.
+      Soluções premium de automação empresarial que unem tecnologia de ponta e design sofisticado. 
+      Potencialize seus processos com soluções personalizadas que refletem a excelência do seu negócio.
     </p>
     <div style="display: flex; gap: 20px; flex-wrap: wrap; margin-top: 40px;">
-      <a href="#contato" class="cta-button">
-        <i class="fas fa-rocket"></i> Transformar Minha Empresa
+      <a href="#contato" class="cta-button cta-button-primary">
+        <i class="fas fa-crown"></i> Solicitar Solução
       </a>
-      <a href="#projetos" class="cta-button cta-button-secondary">
-        <i class="fas fa-eye"></i> Ver Casos de Sucesso
+      <a href="#projetos" class="cta-button">
+        <i class="fas fa-gem"></i> Ver Portfólio Exclusivo
       </a>
     </div>
     
     <div class="hero-stats">
       <div class="stat-item">
-        <span class="stat-number">+70%</span>
-        <span class="stat-label">Produtividade</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number">-40%</span>
-        <span class="stat-label">Custos Operacionais</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number">+50</span>
+        <span class="stat-number">30+</span>
         <span class="stat-label">Projetos Entregues</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">100%</span>
+        <span class="stat-label">Satisfação</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">15 dias</span>
+        <span class="stat-label">Primeiro Resultado</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">Premium</span>
+        <span class="stat-label">Qualidade Garantida</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- Serviços -->
-<section id="servicos">
+<section id="servicos" class="section-alt">
   <div class="container">
     <div class="section-header">
-      <span class="section-badge">SOLUÇÕES COMPLETAS</span>
-      <h2 class="section-title">O que a Automação pode fazer pela sua Empresa</h2>
-      <p class="section-subtitle">Implemento sistemas inteligentes que transformam a maneira como sua empresa opera</p>
+      <span class="section-badge">Soluções Exclusivas</span>
+      <h2 class="section-title">Serviços Premium</h2>
+      <p class="section-subtitle">Tecnologia sofisticada para empresas que exigem excelência</p>
     </div>
     
     <div class="services-grid">
       <div class="service-card">
         <div class="service-icon">
-          <i class="fas fa-chart-line"></i>
+          <i class="fas fa-chess-queen"></i>
         </div>
-        <h3>Gestão Inteligente</h3>
-        <p>Sistemas de gestão completos para estoque, compras, vendas e produção com dashboards em tempo real.</p>
+        <h3>Sistemas de Gestão Elite</h3>
+        <p>Desenvolvimento de sistemas personalizados com arquitetura premium, segurança avançada e performance excepcional.</p>
         <ul class="service-features">
-          <li>Dashboard em tempo real</li>
-          <li>Relatórios automatizados</li>
-          <li>Alertas inteligentes</li>
-          <li>Integração total</li>
+          <li>Design exclusivo e personalizado</li>
+          <li>Arquitetura escalável e robusta</li>
+          <li>Integrações premium</li>
+          <li>Suporte dedicado 24/7</li>
         </ul>
       </div>
       
@@ -797,137 +914,192 @@
         <div class="service-icon">
           <i class="fas fa-robot"></i>
         </div>
-        <h3>Automação de Processos</h3>
-        <p>Elimine tarefas repetitivas e reduza erros humanos com automação inteligente de processos empresariais.</p>
+        <h3>Automação Inteligente</h3>
+        <p>Automação de processos com inteligência artificial, machine learning e análise preditiva para decisões estratégicas.</p>
         <ul class="service-features">
-          <li>RPA (Robotic Process Automation)</li>
-          <li>Workflows automatizados</li>
-          <li>Integração entre sistemas</li>
-          <li>Redução de 80% em tarefas manuais</li>
+          <li>IA e Machine Learning</li>
+          <li>Análise preditiva avançada</li>
+          <li>Automação cognitiva</li>
+          <li>Otimização em tempo real</li>
         </ul>
       </div>
       
       <div class="service-card">
         <div class="service-icon">
-          <i class="fas fa-database"></i>
+          <i class="fas fa-chart-line"></i>
         </div>
         <h3>Business Intelligence</h3>
-        <p>Transforme dados em decisões estratégicas com dashboards avançados e análise preditiva.</p>
+        <p>Dashboards executivos com visualizações premium, relatórios inteligentes e insights acionáveis para liderança.</p>
         <ul class="service-features">
-          <li>Dashboards interativos</li>
-          <li>Análise preditiva</li>
-          <li>KPI's automatizados</li>
-          <li>Relatórios personalizados</li>
+          <li>Dashboards executivos</li>
+          <li>Visualização de dados premium</li>
+          <li>Alertas inteligentes</li>
+          <li>Análise competitiva</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Diferenciais -->
-<section id="diferenciais" class="benefits">
+<!-- Portfólio com Galeria -->
+<section id="projetos">
   <div class="container">
     <div class="section-header">
-      <span class="section-badge">POR QUE ESCOLHER MEUS SERVIÇOS</span>
-      <h2 class="section-title">Diferenciais que Fazem a Diferença</h2>
-      <p class="section-subtitle">Mais do que tecnologia, entrego resultados mensuráveis para seu negócio</p>
+      <span class="section-badge">Galeria de Projetos</span>
+      <h2 class="section-title">Portfólio Premium</h2>
+      <p class="section-subtitle">Soluções sofisticadas que transformaram empresas líderes</p>
     </div>
     
-    <div class="benefits-grid">
-      <div class="benefit-card">
-        <div class="benefit-icon">
-          <i class="fas fa-bolt"></i>
+    <div class="projects-showcase">
+      <!-- Sistema de Gestão de Estoque -->
+      <div class="project-category">
+        <h3 class="category-title">Sistema de Gestão de Estoque</h3>
+        <div class="project-gallery">
+          <div class="gallery-item" onclick="openModal('1.jpeg')">
+            <img src="1.jpeg" alt="Dashboard principal do sistema de estoque">
+            <div class="gallery-overlay">
+              <h4>Dashboard Principal</h4>
+              <p>Visão geral em tempo real do inventário</p>
+            </div>
+          </div>
+          <div class="gallery-item" onclick="openModal('2.jpeg')">
+            <img src="2.jpeg" alt="Controle de entradas e saídas">
+            <div class="gallery-overlay">
+              <h4>Controle de Movimentações</h4>
+              <p>Registro detalhado de todas as transações</p>
+            </div>
+          </div>
+          <div class="gallery-item" onclick="openModal('3.jpeg')">
+            <img src="3.jpeg" alt="Relatórios analíticos">
+            <div class="gallery-overlay">
+              <h4>Análise Avançada</h4>
+              <p>Relatórios e insights para tomada de decisão</p>
+            </div>
+          </div>
         </div>
-        <h3>Resultados Rápidos</h3>
-        <p>Primeiras automações funcionando em menos de 15 dias</p>
+        <p style="color: rgba(255, 255, 255, 0.7); margin-top: 20px;">
+          <strong>Resultados:</strong> Redução de 65% no tempo de inventário, eliminação de erros e controle total em tempo real.
+        </p>
       </div>
       
-      <div class="benefit-card">
-        <div class="benefit-icon">
-          <i class="fas fa-shield-alt"></i>
+      <!-- Sistema de Compras -->
+      <div class="project-category">
+        <h3 class="category-title">Sistema de Gestão de Compras</h3>
+        <div class="project-gallery">
+          <div class="gallery-item" onclick="openModal('4.jpeg')">
+            <img src="4.jpeg" alt="Interface de solicitação de compras">
+            <div class="gallery-overlay">
+              <h4>Solicitação de Compras</h4>
+              <p>Fluxo otimizado para requisições</p>
+            </div>
+          </div>
+          <div class="gallery-item" onclick="openModal('5.jpeg')">
+            <img src="5.jpeg" alt="Aprovações e workflow">
+            <div class="gallery-overlay">
+              <h4>Workflow de Aprovações</h4>
+              <p>Processo automatizado de validação</p>
+            </div>
+          </div>
+          <div class="gallery-item" onclick="openModal('6.jpeg')">
+            <img src="6.jpeg" alt="Dashboard de compras">
+            <div class="gallery-overlay">
+              <h4>Dashboard Executivo</h4>
+              <p>Visão estratégica das aquisições</p>
+            </div>
+          </div>
         </div>
-        <h3>Sem Risco</h3>
-        <p>Prova de conceito gratuita antes de qualquer compromisso</p>
+        <p style="color: rgba(255, 255, 255, 0.7); margin-top: 20px;">
+          <strong>Resultados:</strong> Otimização de 70% no processo de compras e redução de 40% nos custos operacionais.
+        </p>
       </div>
       
-      <div class="benefit-card">
-        <div class="benefit-icon">
-          <i class="fas fa-handshake"></i>
+      <!-- Gestão à Vista -->
+      <div class="project-category">
+        <h3 class="category-title">Gestão à Vista - Sistema de KPI's</h3>
+        <div class="project-gallery">
+          <div class="gallery-item" onclick="openModal('7.jpeg')">
+            <img src="7.jpeg" alt="Dashboard de KPI's por setor">
+            <div class="gallery-overlay">
+              <h4>KPI's por Setor</h4>
+              <p>Monitoramento individualizado</p>
+            </div>
+          </div>
+          <div class="gallery-item" onclick="openModal('8.JPG')">
+            <img src="8.JPG" alt="Visão geral dos indicadores">
+            <div class="gallery-overlay">
+              <h4>Visão Executiva</h4>
+              <p>Painel de controle gerencial</p>
+            </div>
+          </div>
+          <div class="gallery-item" onclick="openModal('9.JPG')">
+            <img src="9.JPG" alt="Análise comparativa">
+            <div class="gallery-overlay">
+              <h4>Análise Comparativa</h4>
+              <p>Benchmark entre departamentos</p>
+            </div>
+          </div>
         </div>
-        <h3>Parceria Total</h3>
-        <p>Acompanhamento contínuo e suporte dedicado</p>
+        <p style="color: rgba(255, 255, 255, 0.7); margin-top: 20px;">
+          <strong>Resultados:</strong> Monitoramento de 16 setores simultaneamente com aumento de 30% na eficiência operacional.
+        </p>
       </div>
       
-      <div class="benefit-card">
-        <div class="benefit-icon">
-          <i class="fas fa-chart-bar"></i>
+      <!-- Validação Comercial -->
+      <div class="project-category">
+        <h3 class="category-title">Sistema de Validação Comercial</h3>
+        <div class="project-gallery">
+          <div class="gallery-item" onclick="openModal('10.jpeg')">
+            <img src="10.jpeg" alt="Interface mobile do sistema">
+            <div class="gallery-overlay">
+              <h4>Aplicação Mobile</h4>
+              <p>Geolocalização em tempo real</p>
+            </div>
+          </div>
+          <div class="gallery-item" onclick="openModal('11.jpeg')">
+            <img src="11.jpeg" alt="Dashboard de validações">
+            <div class="gallery-overlay">
+              <h4>Dashboard de Controle</h4>
+              <p>Monitoramento de visitas comerciais</p>
+            </div>
+          </div>
         </div>
-        <h3>ROI Garantido</h3>
-        <p>Retorno sobre investimento em média de 3 meses</p>
+        <p style="color: rgba(255, 255, 255, 0.7); margin-top: 20px;">
+          <strong>Resultados:</strong> 100% de transparência nas visitas comerciais e redução de 60% em inconsistências.
+        </p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Projetos -->
-<section id="projetos">
+<!-- Testemunhos -->
+<section class="testimonials">
   <div class="container">
     <div class="section-header">
-      <span class="section-badge">CASOS DE SUCESSO</span>
-      <h2 class="section-title">Transformação Real, Resultados Reais</h2>
-      <p class="section-subtitle">Projetos que revolucionaram a operação de empresas como a sua</p>
+      <span class="section-badge">Depoimentos</span>
+      <h2 class="section-title">Excelência Reconhecida</h2>
+      <p class="section-subtitle">O que líderes empresariais dizem sobre nossas soluções</p>
     </div>
     
-    <div class="projects-grid">
-      <div class="project-card">
-        <div class="project-image">
-          <img src="1.jpeg" alt="Sistema de Gestão de Estoque">
-        </div>
-        <div class="project-content">
-          <div class="project-tags">
-            <span class="project-tag">Automação</span>
-            <span class="project-tag">Gestão</span>
-          </div>
-          <h3>Sistema de Gestão de Estoque</h3>
-          <p>Redução de 65% no tempo de inventário e eliminação de erros de contagem. Controle total em tempo real.</p>
-          <a href="https://wa.me/5519983062154?text=Gostaria%20de%20saber%20mais%20sobre%20o%20sistema%20de%20gestão%20de%20estoque" class="cta-button-secondary" style="padding: 10px 20px; font-size: 0.9rem;">
-            Saber Mais
-          </a>
-        </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <p class="testimonial-text">
+          "O sistema desenvolvido pelo Eduardo transformou completamente nossa gestão de estoque. A precisão e elegância da solução superaram todas as expectativas."
+        </p>
+        <p class="testimonial-author">— Diretor de Operações</p>
       </div>
       
-      <div class="project-card">
-        <div class="project-image">
-          <img src="8.JPG" alt="Gestão à Vista">
-        </div>
-        <div class="project-content">
-          <div class="project-tags">
-            <span class="project-tag">Dashboard</span>
-            <span class="project-tag">KPI's</span>
-          </div>
-          <h3>Gestão à Vista - 16 Setores</h3>
-          <p>Controle de indicadores para 16 setores simultâneos. Tomada de decisão baseada em dados em tempo real.</p>
-          <a href="https://wa.me/5519983062154?text=Gostaria%20de%20saber%20mais%20sobre%20o%20sistema%20Gestão%20à%20Vista" class="cta-button-secondary" style="padding: 10px 20px; font-size: 0.9rem;">
-            Saber Mais
-          </a>
-        </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">
+          "A automação implementada reduziu nossos custos operacionais em 40%. Um investimento que se pagou em menos de 3 meses com qualidade premium."
+        </p>
+        <p class="testimonial-author">— CEO do Grupo Empresarial</p>
       </div>
       
-      <div class="project-card">
-        <div class="project-image">
-          <img src="10.jpeg" alt="Validação Comercial">
-        </div>
-        <div class="project-content">
-          <div class="project-tags">
-            <span class="project-tag">Mobile</span>
-            <span class="project-tag">Geolocalização</span>
-          </div>
-          <h3>Validação de Prospecção Comercial</h3>
-          <p>Sistema mobile com geolocalização para validação de visitas comerciais. Transparência total e relatórios automáticos.</p>
-          <a href="https://wa.me/5519983062154?text=Gostaria%20de%20saber%20mais%20sobre%20o%20sistema%20de%20validação%20comercial" class="cta-button-secondary" style="padding: 10px 20px; font-size: 0.9rem;">
-            Saber Mais
-          </a>
-        </div>
+      <div class="testimonial-card">
+        <p class="testimonial-text">
+          "O nível de sofisticação e atenção aos detalhes no sistema de KPI's é impressionante. Finalmente temos visibilidade real sobre nossa operação."
+        </p>
+        <p class="testimonial-author">— Gerente de Controle</p>
       </div>
     </div>
   </div>
@@ -937,34 +1109,34 @@
 <section id="processo">
   <div class="container">
     <div class="section-header">
-      <span class="section-badge">COMO FUNCIONA</span>
-      <h2 class="section-title">Do Problema à Solução em 4 Passos</h2>
-      <p class="section-subtitle">Metodologia comprovada que garante resultados desde o primeiro dia</p>
+      <span class="section-badge">Metodologia Exclusiva</span>
+      <h2 class="section-title">Processo Premium</h2>
+      <p class="section-subtitle">Excelência em cada etapa do desenvolvimento</p>
     </div>
     
     <div class="process-steps">
       <div class="process-step">
-        <div class="step-number">1</div>
-        <h3>Diagnóstico Gratuito</h3>
-        <p>Análise completa dos seus processos para identificar oportunidades de automação</p>
+        <div class="step-number">01</div>
+        <h3>Consultoria Estratégica</h3>
+        <p>Análise detalhada e diagnóstico personalizado para identificar oportunidades de otimização</p>
       </div>
       
       <div class="process-step">
-        <div class="step-number">2</div>
-        <h3>Prova de Conceito</h3>
-        <p>Implementação de uma automação piloto para validar os resultados antes do projeto completo</p>
+        <div class="step-number">02</div>
+        <h3>Design Exclusivo</h3>
+        <p>Criação de interfaces premium com foco em experiência do usuário e elegância visual</p>
       </div>
       
       <div class="process-step">
-        <div class="step-number">3</div>
-        <h3>Desenvolvimento</h3>
-        <p>Criação da solução completa com acompanhamento em tempo real</p>
+        <div class="step-number">03</div>
+        <h3>Desenvolvimento Premium</h3>
+        <p>Implementação com tecnologias de ponta e arquitetura escalável para performance máxima</p>
       </div>
       
       <div class="process-step">
-        <div class="step-number">4</div>
-        <h3>Entrega & Suporte</h3>
-        <p>Implementação total e suporte contínuo para garantir máximo desempenho</p>
+        <div class="step-number">04</div>
+        <h3>Entrega & Excelência</h3>
+        <p>Implementação completa com treinamento e suporte premium para garantia de resultados</p>
       </div>
     </div>
   </div>
@@ -973,10 +1145,10 @@
 <!-- CTA Final -->
 <div class="container">
   <div class="final-cta">
-    <h2>Pronto para Transformar sua Empresa?</h2>
-    <p>Agende uma consultoria gratuita de 30 minutos e descubra como automatizar seus processos para fazer mais com menos recursos.</p>
-    <a href="https://wa.me/5519983062154?text=Olá%20Eduardo,%20gostaria%20de%20agendar%20uma%20consulta%20gratuita%20para%20automatizar%20minha%20empresa!" target="_blank" class="cta-button" style="font-size: 1.2rem; padding: 20px 50px;">
-      <i class="fab fa-whatsapp"></i> Agendar Consultoria Gratuita
+    <h2>Soluções que Elevam seu Negócio</h2>
+    <p>Invista em tecnologia premium que reflete a excelência da sua empresa. Transforme processos com elegância e eficiência.</p>
+    <a href="https://wa.me/5519983062154?text=Olá%20Eduardo,%20gostaria%20de%20uma%20solução%20premium%20para%20minha%20empresa!" target="_blank" class="cta-button cta-button-primary" style="font-size: 1.2rem; padding: 20px 50px;">
+      <i class="fas fa-crown"></i> Iniciar Projeto Premium
     </a>
   </div>
 </div>
@@ -987,37 +1159,67 @@
     <div class="footer-content">
       <div>
         <h3>Eduardo Prado</h3>
-        <p style="color: var(--color-gray); margin-top: 10px;">Engenheiro de Produção/Software especializado em transformar empresas através da automação inteligente.</p>
+        <p style="color: rgba(255, 255, 255, 0.7); margin-top: 10px; font-size: 0.95rem;">
+          Especialista em soluções premium de automação empresarial. Transformando empresas com tecnologia elegante e resultados excepcionais.
+        </p>
       </div>
       
       <div>
-        <h3>Contato Direto</h3>
+        <h3>Contato Exclusivo</h3>
         <div class="contact-info">
-          <p><i class="fab fa-whatsapp"></i> (19) 98306-2154</p>
-          <p><i class="fas fa-envelope"></i> edump@outlook.com.br</p>
-          <p><i class="fas fa-clock"></i> Seg-Sex: 9h às 17h</p>
+          <p><i class="fab fa-whatsapp" style="color: var(--color-gold);"></i> <strong>(19) 98306-2154</strong></p>
+          <p><i class="fas fa-envelope" style="color: var(--color-gold);"></i> edump@outlook.com.br</p>
+          <p><i class="fas fa-clock" style="color: var(--color-gold);"></i> Atendimento Premium</p>
         </div>
       </div>
       
       <div>
-        <h3>Links Rápidos</h3>
+        <h3>Conecte-se</h3>
         <ul class="footer-links">
-          <li><a href="#servicos"><i class="fas fa-arrow-right"></i> Serviços</a></li>
-          <li><a href="#projetos"><i class="fas fa-arrow-right"></i> Projetos</a></li>
-          <li><a href="#processo"><i class="fas fa-arrow-right"></i> Processo</a></li>
-          <li><a href="https://www.linkedin.com/in/eduardoprado" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+          <li><a href="#servicos"><i class="fas fa-chevron-right" style="color: var(--color-gold);"></i> Serviços Premium</a></li>
+          <li><a href="#projetos"><i class="fas fa-chevron-right" style="color: var(--color-gold);"></i> Portfólio Exclusivo</a></li>
+          <li><a href="https://www.linkedin.com/in/eduardoprado" target="_blank"><i class="fab fa-linkedin" style="color: var(--color-gold);"></i> LinkedIn</a></li>
+          <li><a href="https://github.com/eduardoprado" target="_blank"><i class="fab fa-github" style="color: var(--color-gold);"></i> GitHub</a></li>
         </ul>
       </div>
     </div>
     
     <div class="footer-bottom">
-      <p>&copy; 2024 Eduardo Prado - Automatize sua Empresa. Todos os direitos reservados.</p>
-      <p style="margin-top: 10px; font-size: 0.8rem; color: var(--color-gray);">Faça mais com menos - Transforme processos em resultados</p>
+      <p>EDUARDO PRADO | AUTOMAÇÃO EMPRESARIAL PREMIUM</p>
+      <p style="margin-top: 10px; font-size: 0.8rem; color: rgba(255, 255, 255, 0.5);">
+        Excelência em cada linha de código • Sofisticação em cada solução
+      </p>
     </div>
   </div>
 </footer>
 
 <script>
+  // Modal para imagens
+  function openModal(imageSrc) {
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    modalImage.src = imageSrc;
+    modal.style.display = 'flex';
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('imageModal');
+    modal.style.display = 'none';
+  }
+
+  // Fechar modal com ESC
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  // Fechar modal clicando fora
+  document.getElementById('imageModal').addEventListener('click', (e) => {
+    if (e.target.id === 'imageModal') closeModal();
+  });
+
+  // Botão fechar
+  document.querySelector('.close-modal').addEventListener('click', closeModal);
+
   // Navegação suave
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
@@ -1039,44 +1241,24 @@
   window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 100) {
-      navbar.style.background = 'rgba(5, 10, 26, 0.98)';
-      navbar.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+      navbar.style.background = 'rgba(0, 0, 0, 0.98)';
+      navbar.style.backdropFilter = 'blur(15px)';
     } else {
-      navbar.style.background = 'rgba(5, 10, 26, 0.95)';
-      navbar.style.boxShadow = 'none';
+      navbar.style.background = 'rgba(0, 0, 0, 0.95)';
+      navbar.style.backdropFilter = 'blur(10px)';
     }
   });
 
   // Contador animado
   const counters = document.querySelectorAll('.stat-number');
-  const speed = 200;
-
-  const animateCounter = () => {
-    counters.forEach(counter => {
-      const target = +counter.innerText.replace('+', '').replace('-', '');
-      const prefix = counter.innerText.includes('+') ? '+' : '-';
-      const increment = target / speed;
-      let current = 0;
-
-      const updateCounter = () => {
-        if(current < target) {
-          current += increment;
-          counter.innerText = prefix + Math.ceil(current);
-          setTimeout(updateCounter, 1);
-        } else {
-          counter.innerText = prefix + target;
-        }
-      };
-
-      updateCounter();
-    });
-  };
-
-  // Inicia contador quando a seção estiver visível
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if(entry.isIntersecting) {
-        animateCounter();
+        counters.forEach(counter => {
+          const target = counter.innerText;
+          counter.style.opacity = '1';
+          counter.style.transform = 'translateY(0)';
+        });
       }
     });
   }, { threshold: 0.5 });
